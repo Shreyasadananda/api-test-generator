@@ -3,7 +3,7 @@ import os
 from openai import OpenAI
 
 def load_api_data():
-    with open("capture_tools/api_capture.json", "r") as f:
+    with open("capture/api_capture.json", "r") as f:
         return json.load(f)
 
 def build_prompt(entry):
