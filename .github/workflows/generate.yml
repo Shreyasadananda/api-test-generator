@@ -1,0 +1,17 @@
+name: Generate API Tests
+
+
+on: workflow_dispatch
+
+
+jobs:
+generate:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v3
+- name: Install deps
+run: npm install
+- name: Generate
+run: node generator/engine/index.js captures/canonical/demo.json artifacts/run
+- name: Validate
+run: node generator/engine/validator.js
